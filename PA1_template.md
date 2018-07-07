@@ -24,7 +24,7 @@ hist(TotalSteps$Steps,xlab = "Steps",main="Total Number of Steps per Day with NA
 dev.copy(png,width = 480, height = 480, units = "px",("plot1.png"))
 dev.off()
 ```
-![picture](figure/unnamed-chunk-2-1.png)
+![](figure/unnamed-chunk-2-1.png)
 
 
 
@@ -44,10 +44,10 @@ MeanSteps <- na.omit(aggregate(data$steps, by=list(data$interval), mean, na.rm=T
 names(MeanSteps) = c("Interval","Steps")
 ggplot(data=MeanSteps, aes(x=Interval, y=Steps, group=1)) +geom_line()+ggtitle("Time series plot of the 5-minute interval with NAs")+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 dev.copy(png,width = 480, height = 480, units = "px",("plot2.png"))
-
 dev.off()
 max <- MeanSteps$Interval[which.max(MeanSteps$Steps)]
 ```
+![](figure/unnamed-chunk-4-1.png)
 
 The maximum number of steps for the 5-minute intervals, on average across all the days in the dataset, occurs on `r max`.
 
@@ -78,9 +78,11 @@ Total <- aggregate(newdata$steps, by=list(data$date), sum)
 names(Total) = c("Date","Steps")
 hist(Total$Steps,xlab = "Steps",main="Total Number of Steps per Day without NAs")
 dev.copy(png,width = 480, height = 480, units = "px",("plot3.png"))
-
 dev.off()
 ```
+
+![](unnamed-chunk-7-1.png)
+
 The calculaton of the mean and median of the total number of steps taken per day.
 ```{r}
 TotalMean <- mean(Total$Steps)
@@ -119,6 +121,7 @@ dev.copy(png,width = 480, height = 480, units = "px",("plot4.png"))
 
 dev.off()
 ```
+![](figure/unnamed-chunk-10-1.png)
 
 
 
