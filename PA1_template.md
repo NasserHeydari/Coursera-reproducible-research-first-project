@@ -81,7 +81,7 @@ dev.copy(png,width = 480, height = 480, units = "px",("plot3.png"))
 dev.off()
 ```
 
-![](unnamed-chunk-7-1.png)
+![](figure/unnamed-chunk-7-1.png)
 
 The calculaton of the mean and median of the total number of steps taken per day.
 ```{r}
