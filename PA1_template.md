@@ -22,9 +22,11 @@ TotalSteps <- aggregate(data$steps, by=list(data$date), sum, na.rm=TRUE)
 names(TotalSteps) = c("Date","Steps")
 hist(TotalSteps$Steps,xlab = "Steps",main="Total Number of Steps per Day with NAs")
 dev.copy(png,width = 480, height = 480, units = "px",("plot1.png"))
-
 dev.off()
 ```
+![picture](figure/unnamed-chunk-2-1.png)
+
+
 
 Here is the mean and median of the total number of steps taken per day
 ```{r}
